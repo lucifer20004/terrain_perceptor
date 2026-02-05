@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terrain Perceptor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <header class="top-bar">
+    <div class="menu"></div>
+    <div class="title">Terrain Perceptor</div>
+    <div class="theme-switch" id="themeToggle">
+      <span id="themeLabel">🌙 Dark Mode</span>              
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <section class="hero">
+      <h1>🌵 Terrain Perceptor</h1>
+      <p>NLP based Advanced AI-driven desert terrain analysis.</p>
+
+      <div class="upload-box">
+        <label class="upload-label">
+          <input type="file" id="imageInput" accept="image/*" hidden />
+          <span>📂 Browse Terrain Scan</span>
+        </label>
+      </div>
+
+      <div id="status" class="status hidden">SYSTEM_READY</div>
+    </section>
+
+    <section class="results">
+      <div class="card">
+        <h3>Input Image</h3>
+        <div class="img-container">
+          <img id="inputPreview" src="https://via.placeholder.com/350x200?text=Awaiting+Input" alt="Input" />
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Segmented Output</h3>
+        <div class="img-container">
+          <img id="segmentedPreview" src="https://via.placeholder.com/350x200?text=Awaiting+Scan" alt="Segmented" />
+        </div>
+        <!-- <div class="legend">
+          <span class="road">Road</span>
+          <span class="rocks">Rocks</span>
+          <span class="veg">Vegetation</span>
+          <span class="sky">Sky</span>
+        </div> -->
+      </div>
+
+      <div class="card report">
+        <h3>🧠 Reasoning Report</h3>
+        <div id="alertBox" class="alert hidden">
+          <strong id="riskLevel">---</strong><br />
+          <span id="riskAdvice">---</span>
+        </div>
+        <div id="confidenceBox" class="confidence-box hidden">
+          <div class="confidence-label">CONFIDENCE LEVEL</div>
+          <div class="confidence-bar-container">
+            <div id="confidenceBar" class="confidence-bar" style="width: 0%"></div>
+          </div>
+          <div id="confidencePercent" class="confidence-percent">0%</div>
+        </div>
+        <div id="reportStats">
+          <p style="opacity: 0.6;">Scan image to initialize telemetry...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
