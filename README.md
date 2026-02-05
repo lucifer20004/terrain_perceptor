@@ -56,10 +56,14 @@ Once both backend and frontend servers are running:
 ###Start Backend Server
 uvicorn BACKEND.app:app
 http://127.0.0.1:8000
+###Start frontend Server
+cd FRONTEND
+python -m http.server 5500
+
 
 ### 1️⃣ Open the Frontend
 Open your browser and go to:
-
+http://127.0.0.1:5500
 
 ### 2️⃣ Upload a Terrain Image
 - Click **“Browse Terrain Scan”**
